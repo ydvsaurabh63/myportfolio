@@ -1,0 +1,140 @@
+.navbar{
+    width:100%;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:999;
+    padding:12px 0;
+    backdrop-filter:blur(15px);
+    background:rgba(15,23,42,.65);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar-container{
+    width:88%;
+    max-width:1120px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    color:#fff;
+    text-decoration:none;
+    font-size:26px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.logo span{
+    color:#38BDF8;
+}
+
+.nav-links{
+    display:flex;
+    align-items:center;
+    gap:24px;
+}
+
+.nav-links li{
+    list-style:none;
+}
+
+.nav-links a{
+    color:#fff;
+    text-decoration:none;
+    font-size:17px;
+    font-weight:500;
+    transition:.3s;
+    position:relative;
+}
+
+.nav-links a::after{
+    content:"";
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-6px;
+    background:#38BDF8;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38BDF8;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.social-links{
+    display:flex;
+    gap:12px;
+}
+
+.social-links a{
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    color:white;
+    background:#1E293B;
+    font-size:18px;
+
+    transition:.35s;
+}
+
+.social-links a:hover{
+    background:#38BDF8;
+    color:#0F172A;
+    transform:translateY(-5px);
+}
+
+@media(max-width:900px){
+    .navbar {
+        padding: 10px 0;
+    }
+
+    .navbar-container {
+        width: 94%;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display:none;
+    }
+
+    .social-links {
+        gap: 8px;
+    }
+
+    .social-links a {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+}
+
+@media(max-width:480px){
+    .navbar-container {
+        width: 95%;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .social-links a {
+        width: 30px;
+        height: 30px;
+        font-size: 15px;
+    }
+}
