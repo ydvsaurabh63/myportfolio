@@ -1,8 +1,12 @@
+import { useState } from "react";
 import "./Hero.css";
 import profile from "../../assets/photo.jpeg";
 
 function Hero() {
+  const [showCv, setShowCv] = useState(false);
+
   return (
+    <>
     <section className="hero" id="home">
 
       <div className="hero-content">
@@ -24,9 +28,9 @@ function Hero() {
 
           <div className="hero-buttons">
 
-            <a href="/resume.pdf" download className="btn">
-              Download CV
-            </a>
+            <button src="/Saurabh%20Singh%20Yadav%20Resume.pdf" type="button" className="btn" onClick={() => setShowCv(true)}>
+              View CV
+            </button>
 
             <a href="#contact" className="btn-outline">
               Contact Me
@@ -54,7 +58,7 @@ function Hero() {
         </div>
 
         <div className="stat-card">
-          <h2>1+</h2>
+          <h2>3+</h2>
           <p>Years Learning</p>
         </div>
 
@@ -66,6 +70,25 @@ function Hero() {
       </div>
 
     </section>
+
+      {showCv && (
+        <div className="cv-modal" onClick={() => setShowCv(false)}>
+          <div className="cv-modal-content" onClick={(event) => event.stopPropagation()}>
+            <div className="cv-modal-header">
+              <h3>My CV</h3>
+              <button type="button" className="cv-close-btn" onClick={() => setShowCv(false)}>
+                ×
+              </button>
+            </div>
+            <iframe
+              src="/Saurabh%20Singh%20Yadav%20Resume.pdf"
+              title="Saurabh Singh Yadav CV"
+              className="cv-iframe"
+            />
+          </div>
+        </div>
+      )}
+    </>
   );
 }
 

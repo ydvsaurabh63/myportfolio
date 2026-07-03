@@ -103,6 +103,9 @@
 
 .btn,
 .btn-outline {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -157,6 +160,56 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.cv-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.cv-modal-content {
+    width: min(100%, 960px);
+    height: min(90vh, 860px);
+    background: #fff;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.cv-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: #0f172a;
+    color: #fff;
+}
+
+.cv-modal-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+.cv-close-btn {
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.cv-iframe {
+    width: 100%;
+    height: calc(100% - 64px);
+    border: none;
+    background: #fff;
 }
 
 .hero-stats {
